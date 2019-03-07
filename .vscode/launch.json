@@ -15,18 +15,16 @@
             "linux":
             {
                 "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
-                "externalConsole": true,
                 "MIMode": "gdb",
                 "miDebuggerPath": "/usr/bin/gdb",
-                // "miDebuggerArgs": "--silent",
+                "externalConsole": true
             },
             "windows":
             {
                 "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}.exe",
-                "externalConsole": true,
                 "MIMode": "gdb",
                 "miDebuggerPath": "gdb.exe",
-                // "miDebuggerArgs": "--silent",
+                "externalConsole": true
             },
             "preLaunchTask": "buildC",
             "setupCommands":
