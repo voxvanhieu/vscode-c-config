@@ -24,7 +24,7 @@
                 "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}.exe",
                 "MIMode": "gdb",
                 "miDebuggerPath": "gdb.exe",
-                "externalConsole": true
+                "externalConsole": false
             },
             "preLaunchTask": "buildC",
             "setupCommands":
