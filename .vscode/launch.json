@@ -5,30 +5,28 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "Build C & Run",
             "type": "cppdbg",
             "request": "launch",
-            "program": "",  //"${workspaceRoot}/a.out",
+            "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
             "args": [],
-            "cwd": "${workspaceFolder}",
             "environment": [],
-            "linux":
-            {
-                "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+            "preLaunchTask": "Build active C file",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "linux": {
                 "MIMode": "gdb",
                 "miDebuggerPath": "/usr/bin/gdb",
-                "externalConsole": true
             },
-            "windows":
-            {
+            "windows": {
                 "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}.exe",
                 "MIMode": "gdb",
                 "miDebuggerPath": "gdb.exe",
-                "externalConsole": false
             },
-            "preLaunchTask": "buildC",
-            "setupCommands":
-            [
+            "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",

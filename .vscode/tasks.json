@@ -4,19 +4,57 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "buildC",
             "type": "shell",
+            "label": "Build active C file",
             "command": "gcc",
+            "osx": {
+                "command": "clang",
+                "problemMatcher": [
+                    "$gcc"
+                ]
+            },
             "args": [
                 "-g",
                 "${relativeFile}",
                 "-o",
                 "bin/${fileBasenameNoExtension}"
             ],
-            "group":{
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "group": {
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Fix Terminal permission for OSX",
+            "type": "shell",
+            "osx": {
+                "command": "osascript -e 'tell application \"Terminal\"\ndo script \"echo hello\"\nend tell'",
+                "problemMatcher": []
+            },
+            "problemMatcher": []
         }
     ]
 }
