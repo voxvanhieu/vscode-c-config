@@ -46,15 +46,6 @@
                 "kind": "build",
                 "isDefault": true
             }
-        },
-        {
-            "label": "Fix Terminal permission for OSX",
-            "type": "shell",
-            "osx": {
-                "command": "osascript -e 'tell application \"Terminal\"\ndo script \"echo hello\"\nend tell'",
-                "problemMatcher": []
-            },
-            "problemMatcher": []
         }
     ]
 }
