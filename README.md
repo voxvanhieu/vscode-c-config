@@ -2,6 +2,8 @@
 
 > Working on OSX, Linux & Windows
 
+![visitors](https://visitor-badge.glitch.me/badge?page_id=voxvanhieu.vscode-c-config)
+
 ## How to use
 
 - Install C/C++ compiler.
